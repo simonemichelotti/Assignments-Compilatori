@@ -1,0 +1,9 @@
+/home/simon/Laboratorio_Compilatori/Assignment_4/build/CMakeFiles/intrinsics_gen.dir
+/home/simon/Laboratorio_Compilatori/Assignment_4/build/CMakeFiles/omp_gen.dir
+/home/simon/Laboratorio_Compilatori/Assignment_4/build/CMakeFiles/acc_gen.dir
+/home/simon/Laboratorio_Compilatori/Assignment_4/build/CMakeFiles/ARMTargetParserTableGen.dir
+/home/simon/Laboratorio_Compilatori/Assignment_4/build/CMakeFiles/AArch64TargetParserTableGen.dir
+/home/simon/Laboratorio_Compilatori/Assignment_4/build/CMakeFiles/RISCVTargetParserTableGen.dir
+/home/simon/Laboratorio_Compilatori/Assignment_4/build/CMakeFiles/LoopFusion.dir
+/home/simon/Laboratorio_Compilatori/Assignment_4/build/CMakeFiles/edit_cache.dir
+/home/simon/Laboratorio_Compilatori/Assignment_4/build/CMakeFiles/rebuild_cache.dir
