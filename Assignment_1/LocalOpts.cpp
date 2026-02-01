@@ -9,7 +9,7 @@
 
 using namespace llvm;
 
-//Obtiene la costante e il parametro dall'istruzione binaria
+//Ottiene la costante e il parametro dall'istruzione binaria
 bool getConstantFromInstruction(Instruction &inst, ConstantInt *&C, Value *&Param){
     if (auto *constant = dyn_cast<ConstantInt>(inst.getOperand(0))) {
         C = constant;
@@ -221,7 +221,7 @@ bool multiInstructionOptimization(BasicBlock &B){
                     if (!(getConstantFromInstruction(user_instruction, userC, userParam)))
                         continue;
 
-                    // Pattern 1: a = b + c; d = a - c;  oppure  a = b - c; d = a + c;
+                    //a = b + c; d = a - c -> d=b  oppure  a = b - c; d = a + c -> d=b
                     if (userParam == &Inst && C->getValue() == userC->getValue()) {
                         user_instruction.replaceAllUsesWith(Param);
                     }
