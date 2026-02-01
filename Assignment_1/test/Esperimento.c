@@ -3,8 +3,7 @@
 int main() {
     int x = 5;
     int a, b = 3, c;
-
-    // Espressioni richieste
+    
     int sum = x + 0;
     int prod = x * 1;
     int mult = 15 * x;
@@ -12,7 +11,6 @@ int main() {
     a = b + 1;
     c = a - 1;
 
-    // Stampa dei risultati
     printf("x + 0 = %d\n", sum);
     printf("x * 1 = %d\n", prod);
     printf("15 * x = %d\n", mult);
@@ -21,4 +19,5 @@ int main() {
     printf("c = a - 1 = %d\n", c);
 
     return 0;
+
 }
