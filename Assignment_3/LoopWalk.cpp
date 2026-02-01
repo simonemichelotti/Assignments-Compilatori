@@ -128,19 +128,18 @@ PreservedAnalyses LoopWalk::run(Loop &L, LoopAnalysisManager &LAM, LoopStandardA
     return PreservedAnalyses::all();
   }
 
-  //Per ogni BB per ogni istruzione, verifica se è loop-invariant
+   //Per ogni BB per ogni istruzione, verifica se è loop-invariant
   for (Loop::block_iterator BI = L.block_begin(); BI != L.block_end(); ++BI){       
     BasicBlock *BB = *BI;
     for (auto inst = BB->begin(); inst != BB->end(); ++inst ){                      
-        Instruction &Inst = *inst;
-        if ( isLoopInvariant(Inst, loopInvariantInstructionsSet, L) &&
-             dominatesAllLoopExits(LAR.DT, L, &Inst) &&
-             isDeadOutsideLoop(L, &Inst) &&
-             dominatesAllUses(LAR.DT, &Inst) &&
-             isOnlyDefinitionInLoop(L, &Inst) ) {
-            loopInvariantInstructionsSet.insert(&Inst);
-        }
+    Instruction &Inst = *inst;
+    if ( isLoopInvariant(Inst, loopInvariantInstructionsSet, L) &&
+         dominatesAllUses(LAR.DT, &Inst) &&
+         isOnlyDefinitionInLoop(L, &Inst) &&
+         (isDeadOutsideLoop(L, &Inst) || dominatesAllLoopExits(LAR.DT, L, &Inst)) ) {
+        loopInvariantInstructionsSet.insert(&Inst);
     }
+  }
 }
   //Ottieni il preheader del loop
   BasicBlock* LoopPreheader = L.getLoopPreheader();
