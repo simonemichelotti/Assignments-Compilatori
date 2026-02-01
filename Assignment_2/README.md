@@ -30,6 +30,8 @@ Initial Interior Points| $in[b] = U$
 | BB5  | U     |        | (b-a) | Ø      |
 | BB2  | U     |        | **(b-a)** | {(a-b), (b-a)} ∩ {(b-a)} = (b-a) |
 
+La Very Busy Expression nel punto p è "b-a"
+
 ---
 
 ## 2) Dominator Analysis
